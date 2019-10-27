@@ -34,7 +34,7 @@
 <form report-submit bindsubmit="bind{{state.humCare*1+state.culTran*1+state.resp*1==9?'lottery':'vote'}}">
   <button formType="submit" class='votebtn {{state.humCare*1+state.culTran*1+state.resp*1==9?"lottery":""}}'>
     <image style='width:60rpx;height:60rpx;margin-right:10rpx;' src='/image/{{state.humCare*1+state.culTran*1+state.resp*1==9?"lottery":"gq"}}.svg'></image>
-    <view>{{state.humCare*1+state.culTran*1+state.resp*1==9?'参与抽奖！':'我要投票！'}}</view>
+    <view>{{state.humCare*1+state.culTran*1+state.resp*1==9?'参与抽奖！':'收集卡片！'}}</view>
     <!-- <image style='width:100%;' src='/image/btn.svg'></image> -->
   </button>
 </form>
