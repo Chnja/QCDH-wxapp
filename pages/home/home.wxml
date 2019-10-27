@@ -1,0 +1,63 @@
+<!--pages/home/home.wxml-->
+<!-- <text>pages/home/home.wxml</text> -->
+<image src='/image/home.png' mode='widthFix' style='width:100%;height:486rpx;margin-bottom:-50rpx;'></image>
+
+<!-- <button bindtap="toggle" class='cu-btn animation-{{animation=="shake"?"shake":""}} margin-sm basis-sm shadow'>shake</button> -->
+<view wx:if="{{state.humCare*1+state.culTran*1+state.resp*1==9}}" class='finishpicview'>
+  <image src='/image/finish.svg' class='finishpic animation-{{(animation=="scale")?"scale-down":""}}'></image>
+</view>
+
+<view wx:for="{{track}}" wx:key="{{index}}" class='track'>
+  <view class='trackname'>{{item.name}}</view>
+  <view class='cardlist'>
+    <!-- <view class='card' wx:for="{{urllist}}" wx:key='{{item}}'> -->
+    <!-- <image class='card' wx:for="{{urllist}}" wx:key='{{index}}' mode='widthFix' style='{{index%2==2?"filter:grayscale(100%);":""}}' src='{{item}}'></image> -->
+    <!-- </view> -->
+    <view class='cardsingle' wx:for="abc" wx:for-item="items" wx:for-index="indexs" wx:key="{{indexs}}">
+      <view style='height:0'></view>
+      <view wx:if="{{indexs<state[item.mark]}}" class='cardpic' style="box-shadow: 0 0 30rpx #fef4cb;">
+        <image style='width:100%;height:100%;padding:10rpx;' src='http://qcdhimg.whu1893.cn/{{item.mark}}{{indexs}}.png?imageView2/0/w/360/h/360' bindload='imgload' data-img="[{{index}}].{{items}}"></image>
+        <image wx:if="{{item[items]==undefined}}" class='lock' src='/image/70.png' style='background-color: #ffe1e1;'></image>
+      </view>
+
+      <view wx:else class='cardpic animation-{{(animation==item.mark+indexs)?"shake":""}}'>
+        <image style='width:100%;height:100%;padding:10rpx;' src='http://qcdhimg.whu1893.cn/{{item.mark}}{{indexs}}.png?imageView2/0/w/360/h/360' bindload='imgload' data-img="[{{index}}].{{items}}"></image>
+        <image class='lock' src='/image/70.png'></image>
+      </view>
+      <view class='get'>
+        <image wx:if="{{indexs<state[item.mark]}}" src="/image/get.svg" style='width:120rpx;height:120rpx;'></image>
+        <image wx:else src="/image/unget.svg" style='width:120rpx;height:120rpx;'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<form report-submit bindsubmit="bind{{state.humCare*1+state.culTran*1+state.resp*1==9?'lottery':'vote'}}">
+  <button formType="submit" class='votebtn {{state.humCare*1+state.culTran*1+state.resp*1==9?"lottery":""}}'>
+    <image style='width:60rpx;height:60rpx;margin-right:10rpx;' src='/image/{{state.humCare*1+state.culTran*1+state.resp*1==9?"lottery":"gq"}}.svg'></image>
+    <view>{{state.humCare*1+state.culTran*1+state.resp*1==9?'参与抽奖！':'我要投票！'}}</view>
+    <!-- <image style='width:100%;' src='/image/btn.svg'></image> -->
+  </button>
+</form>
+<view wx:if="{{state.humCare*1+state.culTran*1+state.resp*1==9}}" style='margin-top:-20rpx;' class='votebtn' bindtap="bindrank">
+  <image style='width:50rpx;height:50rpx;margin:8rpx;margin-right:10rpx;' src='/image/rank.svg'></image>
+  <view>查看投票详情</view>
+  <!-- <image style='width:100%;' src='/image/btn.svg'></image> -->
+</view>
+<view style='height:40rpx;'></view>
+<!-- <view style='flex:1'></view> -->
+<!-- <view class='copyright'>Created by CXM & Chnja.</view> -->
+
+
+<view wx:if='{{modalshowpre}}' class="cu-modal {{modalshow?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog cdialog">
+    <!-- <view class="bg-img" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg');height:200px;" catchtap="none">
+    </view> -->
+    <view class='modaltitle'>解锁1张“{{trackname[state.groupName]}}”卡片</view>
+    <!-- <view class='modaltitle' wx:else>恭喜你集齐卡片了！</view> -->
+    <image src='http://qcdhimg.whu1893.cn/{{modalpic}}.png' class='modalpic' catchtap="none" bindload="modalpicload"></image>
+    <!-- <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub solid-left" bindtap="hideModal">我知道了</view>
+    </view> -->
+    <view class='getbtn'>收下</view>
+  </view>
+</view>

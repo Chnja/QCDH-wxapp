@@ -1,0 +1,123 @@
+/* pages/question/question.wxss */
+
+.yd {
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  /* position: absolute; */
+}
+
+.quescard {
+  /*  */
+  margin: 30rpx;
+  width: 690rpx;
+  /* margin-top: 100rpx; *//* background-color: rgba(255, 255, 255, 0.4); */
+  background-color: white;
+  border-radius: 15rpx;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+.quesdetail {
+  padding: 30rpx 30rpx;
+  font-size: 40rpx;
+}
+
+.question {
+  text-align: justify;
+  /* color: #fff9d5; */
+}
+
+.qis {
+  position: absolute;
+  /* width: 630rpx; */
+  width: 100%;
+  text-align: center;
+  top: -60rpx;
+}
+
+.qi {
+  background-color: white;
+  width: 120rpx;
+  height: 120rpx;
+  /* margin-bottom: 10rpx; */
+  border-radius: 100%;
+  padding: 12rpx;
+  box-shadow: 0 0 8rpx #a90f0f;
+  /* height: 110rpx;
+  width: 110rpx; */
+}
+
+.choosetitle {
+  /* text-align: left; */
+  font-weight: bold;
+  color: #d51b1d;
+  margin-bottom: 10rpx;
+  /* margin-top:-40rpx; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* padding: 10rpx 20rpx; */
+  margin-top: 40rpx;
+  border-radius: 10rpx;
+  /* border: 1rpx solid #c8c8c8; */
+}
+
+.optionA {
+  color: #d51b1d;
+  margin-right: 20rpx;
+  font-weight: bold;
+  font-size: 50rpx;
+}
+
+.optiondetail {
+  text-align: justify;
+}
+
+.tracklist {
+  text-align: left;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+  /* background-color: #fe9a9a; */
+  box-shadow: 0 0 8rpx #fe9a9a;
+  padding: 20rpx 10rpx;
+}
+
+.tracktitle {
+  margin: 0 10rpx;
+  /* margin-bottom: -10rpx; *//* transform: translateY(-50%); */
+  color: #fff5c1;
+  font-weight: bold;
+  background-color: #d73131;
+  border-radius: 100rpx;
+  padding: 5rpx 20rpx;
+  width: fit-content;
+  font-size: 30rpx;
+}
+
+.teamlist {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  padding-left: 20rpx;
+}
+
+.team {
+  margin-right: 10rpx;
+  font-weight: bold;
+}
+
+.ticket {
+  /* font-weight: bold; */
+  margin-left: 10rpx;
+  color: #d73131;
+}

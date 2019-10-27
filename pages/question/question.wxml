@@ -1,0 +1,45 @@
+<!--pages/question/question.wxml-->
+<!-- <text>pages/question/question.wxml</text> -->
+
+<view style='height:417rpx;margin-bottom:-60rpx;'>
+  <image src='/image/rmdht.png' style='width: 750rpx;height: 417rpx;'></image>
+
+  <cu-custom isCustom="{{true}}">
+    <view slot="content">思政超市·青春寻访</view>
+  </cu-custom>
+</view>
+
+<view class='quescard'>
+  <view class='qis'>
+    <image src='/image/70.png' class='qi'></image>
+  </view>
+  <view class='quesdetail'>
+    <view class='choosetitle'>
+      <view>投票详情</view>
+      <view style="font-size:30rpx;">参与总人数：{{response.personCount}}</view>
+    </view>
+
+    <!-- <view class='question'>{{question}}</view>
+    <view class='option' wx:for='{{option}}' wx:key="{{index}}">
+      <view class='optionA'>{{optionA[index]}}</view>
+      <view class='optiondetail'>{{item}}</view>
+    </view> -->
+    <view class='tracklist' wx:for="{{trackname}}" wx:key="{{index}}">
+      <view class='tracktitle'>{{item}}</view>
+      <view class='teamlist' wx:for="{{response[index]}}" wx:key="{{team.teamId}}" wx:for-item="team">
+        <view class='team'>{{team.teamId}}</view>
+        <view class="cu-progress round striped active" style='width:70%'>
+          <view class="bg-red" style="width:{{team.count/response.personCount*100}}%;"></view>
+        </view>
+        <!-- <text class="margin-left">80%</text> -->
+        <view class='ticket'>{{team.count}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view style='height:300rpx;'></view>
+
+<view class='yd'>
+  <image src='/image/yd.png' style='width: 750rpx;height: 486rpx;'></image>
+  <view style='width:750rpx;height:100rpx;background-color:#d73131;margin-top:-50rpx;'></view>
+</view>

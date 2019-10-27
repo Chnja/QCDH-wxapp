@@ -1,0 +1,10 @@
+/* colorui/components/cu-custom.wxss */
+
+.ctitle {
+  color: #fff9d5;
+  /* -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  -webkit-text-fill-color: #d73131; */
+  /* text-shadow: 0 0 1px white; */
+  font-weight: bold;
+}
