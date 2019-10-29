@@ -1,4 +1,4 @@
-const urlset = "https://qcdh.whu1893.cn"
+const urlset = "https://api.cxming.com"
 
 function cpost(url, data) {
   return new Promise(function(resolve, reject) {
